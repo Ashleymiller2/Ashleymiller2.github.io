@@ -147,19 +147,19 @@ RestaurantOverviewImages=[
     ]
 
 MenuDivs = [
-       '<div class="item"><p>Jerk Chicken Dish  <span class="price">$15</span><br /><small>Dish of Jerk Chicken with option of white rice or rice and peas. A side option of Plantains, Maccaroni Salad, Fresh Vegetables or Cabbage  </small></p> </div>',
-'<div class="item"><p> Curry Chicken Dish <span class="price">$10</span><br /><small>Curried Chicken with white rice served with wite rice with side options of Dumplings, plantains, or fresh vegetables </small></p></div>',
-'<div class="item"><p>Jamaican Rum Cake <span class="price">$8</span><br /><small> Jamaican made rum cake with Wray and nephew rum. Deliciously made. Its home awy from home. Literally </small></p></div>',
+       '<div class="item"onclick=this.classList.toggle("show-description")><p>Jerk Chicken Dish  <span class="price">$15</span><br /><small>Dish of Jerk Chicken with option of white rice or rice and peas. A side option of Plantains, Maccaroni Salad, Fresh Vegetables or Cabbage  </small></p> </div>',
+'<div class="item"onclick=this.classList.toggle("show-description")><p> Curry Chicken Dish <span class="price">$10</span><br /><small>Curried Chicken with white rice served with wite rice with side options of Dumplings, plantains, or fresh vegetables </small></p></div>',
+'<div class="item"onclick=this.classList.toggle("show-description")><p>Jamaican Rum Cake <span class="price">$8</span><br /><small> Jamaican made rum cake with Wray and nephew rum. Deliciously made. Its home awy from home. Literally </small></p></div>',
   ]
 RestaurantOverviewDivs =[
-  '<div class="item"><p>Owner</br><small>Ashley developed her jamaican cusine restauant in 2018 </small></p> </div>',
-'<div class="item"><p>Team</br><small> A group of 5 chefs straight out of Jamaica </small></p></div>',
-'<div class="item"><p>Goal</br><small>Provide people with a taste of the country. Its home away from home. Literally </small></p></div>',
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>Owner</br><small>Ashley developed her jamaican cusine restauant in 2018 </small></p> </div>',
+'<div class="item"onclick=this.classList.toggle("show-description")><p>Team</br><small> A group of 5 chefs straight out of Jamaica </small></p></div>',
+'<div class="item"onclick=this.classList.toggle("show-description")><p>Goal</br><small>Provide people with a taste of the country. Its home away from home. Literally </small></p></div>',
   ]
 customerreviewsDivs =[ 
-  '<div class="item"><p>5 Star</br><small>This is definitely a 5 star restaurant.Yummy!!- Brianna P</small></p> </div>',
-'<div class="item"><p> Too good</br><small> Jerk chicken tastes like its straight out of Jamaica. Best thing I ever tried.- Paul B </small></p></div>',
-'<div class="item"><p>Delicious</br><small>Their rum cake was delicious. Definitely buying again.- Riri D </small></p></div>',
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>5 Star</br><small>This is definitely a 5 star restaurant.Yummy!!- Brianna P</small></p> </div>',
+'<div class="item"onclick=this.classList.toggle("show-description")><p> Too good</br><small> Jerk chicken tastes like its straight out of Jamaica. Best thing I ever tried.- Paul B </small></p></div>',
+'<div class="item"onclick=this.classList.toggle("show-description")><p>Delicious</br><small>Their rum cake was delicious. Definitely buying again.- Riri D </small></p></div>',
   ]
 
 function RestaurantOverview() { 
@@ -201,9 +201,7 @@ function customerreviews() {
    }
 }
 
-  $('div').on('click', function() {
-      $(this).toggleClass('show-description');
-  });
+  
 </script>
 
 </body>
