@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href= "https://fonts.googleapis.com/css?family=Lato|Slabo+27px|Lato" rel="stylesheet" type='text/css'>
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #545;
+}
+div {
+  height: 250px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+ul {
+      padding: 10px;
+      background: rgba(5,5,9,15);
+      text-align: center;
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+h1 {
+  font-family: 'Slabo 27px',serif;
+  text-align: center;
+  font-size: 75px;
+  color: #f05;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #f07;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(2,255,255,1);
+  Font-family: 'Lato', sans-serif;
+  background: #f09 ;
+  background: linear-gradient(bottom, rgba(100,100,100,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(150,100,100,1), rgba(50,70,90,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://hips.hearstapps.com/del.h-cdn.co/assets/17/28/1024x512/landscape-1499895297-jerk-chicken-delish.jpg?resize=1200:*");
+  background-size: 100% 100%;
+  height:250px
+}
+.second{
+  background-image: url("https://img.taste.com.au/h5ppheJn/taste/2016/11/comfort-chicken-curry-108000-1.jpeg");
+   background-size: 100% 100%;
+  height:250px
+}
+.dessert{
+  background-image: url("https://www.alicaspepperpot.com/wp-content/uploads/2017/11/DSC_0262-1024x683.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Lato',sans-serif;
+    color: rgba(120,200,150,1)
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<ul>
+      <li><button onclick=RestaurantOverview()>About Me</button></li>
+      <li><button onclick=Menu()> Menu</button></li>
+      <li><button onclick=customerreviews()>Reviews</button></li>
+    </ul>
+
+<h1> Ashley's Foodbar</h1>
+<h2>A Jamaican Cuisine</h2>
+<div id="restaurant"> 
+
+</div>
+
+<script>
+
+
+MenuImages=[
+  'url("https://hips.hearstapps.com/del.h-cdn.co/assets/17/28/1024x512/landscape-1499895297-jerk-chicken-delish.jpg?resize=1200:*")',
+  'url("https://img.taste.com.au/h5ppheJn/taste/2016/11/comfort-chicken-curry-108000-1.jpeg")',
+  'url("https://www.alicaspepperpot.com/wp-content/uploads/2017/11/DSC_0262-1024x683.jpg")'
+  ]
+RestaurantOverviewImages=[
+  'url("https://www.usmenuguide.com/jamaicansouloutside.jpg")',
+  'url("http://s3.amazonaws.com/bushwickdaily.com/post_image-image/Soe5wSSab7qS_xzFPfq6Mg.jpg")', 
+  'url("https://www.donnascaribbean.com/wp-content/themes/twentyseventeen/images/donnascaribbean2.png")'
+  ]
+  customerreviewsImages=[ 
+    'url("https://miro.medium.com/max/1400/1*IVECbk7T3W0FwVl1V53khw.png")',
+    'url("https://food.fnr.sndimg.com/content/dam/images/food/editorial/shows/t/the-best-thing-i-ever-ate/FN-ShowLogo-Best-Thing-I-Ever-Ate-1920x1080.jpg.rend.hgtvcom.616.347.suffix/1377612937647.jpeg")',
+    'url(" https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Delicious_wordmark.svg/1200px-Delicious_wordmark.svg.png")'
+    ]
+
+MenuDivs = [
+       '<div class="item"><p>Jerk Chicken Dish  <span class="price">$15</span><br /><small>Dish of Jerk Chicken with option of white rice or rice and peas. A side option of Plantains, Maccaroni Salad, Fresh Vegetables or Cabbage  </small></p> </div>',
+'<div class="item"><p> Curry Chicken Dish <span class="price">$10</span><br /><small>Curried Chicken with white rice served with wite rice with side options of Dumplings, plantains, or fresh vegetables </small></p></div>',
+'<div class="item"><p>Jamaican Rum Cake <span class="price">$8</span><br /><small> Jamaican made rum cake with Wray and nephew rum. Deliciously made. Its home awy from home. Literally </small></p></div>',
+  ]
+RestaurantOverviewDivs =[
+  '<div class="item"><p>Owner</br><small>Ashley developed her jamaican cusine restauant in 2018 </small></p> </div>',
+'<div class="item"><p>Team</br><small> A group of 5 chefs straight out of Jamaica </small></p></div>',
+'<div class="item"><p>Goal</br><small>Provide people with a taste of the country. Its home away from home. Literally </small></p></div>',
+  ]
+customerreviewsDivs =[ 
+  '<div class="item"><p>5 Star</br><small>This is definitely a 5 star restaurant.Yummy!!- Brianna P</small></p> </div>',
+'<div class="item"><p> Too good</br><small> Jerk chicken tastes like its straight out of Jamaica. Best thing I ever tried.- Paul B </small></p></div>',
+'<div class="item"><p>Delicious</br><small>Their rum cake was delicious. Definitely buying again.- Riri D </small></p></div>',
+  ]
+
+function RestaurantOverview() { 
+  about = document.getElementById("restaurant")
+    about.innerHTML = ''
+	  about.innerHTML += RestaurantOverviewDivs[0]
+    about.innerHTML += RestaurantOverviewDivs[1]
+    about.innerHTML += RestaurantOverviewDivs[2]
+    items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+          items[i].style.background = RestaurantOverviewImages[i]
+          items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+function Menu() {
+    food = document.getElementById("restaurant")
+    food.innerHTML = ''
+	  food.innerHTML += MenuDivs[0]
+    food.innerHTML += MenuDivs[1]
+    food.innerHTML += MenuDivs[2]
+    items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+          items[i].style.background = MenuImages[i]
+          items[i].style.backgroundSize = '100% 100%'
+    }
+  }
+  
+function customerreviews() { 
+  food = document.getElementById("restaurant")
+    food.innerHTML = ''
+	  food.innerHTML += customerreviewsDivs[0]
+    food.innerHTML += customerreviewsDivs[1]
+    food.innerHTML += customerreviewsDivs[2]
+   items = document.getElementsByClassName("item")
+   for(i=0; i<3; i=i+1) {
+    items[i].style.background = customerreviewsImages[i]
+    items[i].style.backgroundSize = '100% 100%'
+   }
+}
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
+ 
