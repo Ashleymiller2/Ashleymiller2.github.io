@@ -8,6 +8,9 @@
 /**************************************
 link & button
 **************************************/
+.container {
+	overflow: hidden;
+}
 .white
 {
 	color:#fff !important;
